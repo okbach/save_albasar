@@ -1,7 +1,7 @@
 numpy==1.21.6
 mss==7.0.1
 Pillow==9.5.0
-opencv-python-headless>=4.5.1.48
+opencv-python-headless==4.5.1.48
 pydload==1.0.9
 scikit-image==0.19.3
 onnxruntime==1.4.0
