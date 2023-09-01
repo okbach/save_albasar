@@ -1,9 +1,6 @@
-import os
 import cv2
-import pydload
 import logging
 import numpy as np
-
 from PIL import Image as pil_image
 
 if pil_image is not None:
@@ -52,9 +49,12 @@ def load_img(
 
     if isinstance(path, type("")):
         img = pil_image.open(path)
+        #print('its path')
     else:
+        #print('its opject')
         path = cv2.cvtColor(path, cv2.COLOR_BGR2RGB)
         img = pil_image.fromarray(path)
+        #print(img)
 
     if color_mode == "grayscale":
         if img.mode != "L":
@@ -129,6 +129,7 @@ def load_images(image_paths, image_size, image_names):
     loaded_image_paths = []
 
     for i, img_path in enumerate(image_paths):
+        #print (img_path.shape)
         try:
             image = load_img(img_path, target_size=image_size)
             image = img_to_array(image)
