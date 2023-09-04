@@ -26,18 +26,32 @@ while True:
     plt.pause(1)
     '''
 
-    unsafe = classifier_lite.classify(screen)["1"]["unsafe"]
-    safe = classifier_lite.classify(screen)["1"]["safe"]
-    print('safe : ' , safe )
-    print('unsafe : ' , unsafe)
-    if unsafe > 0.35 and safe < 0.7:
-        print('sex ')
-        pyautogui.press('right')
 
-        
+    classify = classifier_lite.classify(screen)
+
+
+
+    if not classify :
+            print('---')
+    else :        
+        unsafe = classify[0]["unsafe"]
+        safe =  classify[0]["safe"]
+        print('safe : ' , safe )
+        print('unsafe : ' , unsafe)
+        if unsafe > 0.947 and safe < 0.05:
+            print('safe : ' , safe )
+            print('unsafe : ' , unsafe)
+            print('sex ')
+            pyautogui.press('right')
+            pyautogui.press('right')
+            #exit()
+        elif   unsafe > 0.5 :
+            print('safe : ' , safe )
+            print('unsafe : ' , unsafe)
+            print('sex ')
+            pyautogui.press('right')
 
     #you can try by url img 
     #print(classifier_lite.classify('C:/Users/deep_root/Desktop/a.jpg'))
     
-
 
