@@ -1,4 +1,4 @@
-opencv-python==4.5.1.48
+#opencv-python==4.5.1.48
 numpy==1.21.6
 mss==7.0.1
 Pillow==9.5.0
