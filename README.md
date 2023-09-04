@@ -15,5 +15,5 @@ open cmd and writ : python main.py <br>
 and you can tryit by  
 Watch videos on YouTube or any media player  supports scrolling the time pres the arrows <- -> on the keyboard
 
-Enjoy watching without  porn 
+Enjoy watching .
 
