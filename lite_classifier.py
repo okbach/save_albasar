@@ -28,7 +28,7 @@ class LiteClassifier:
         result = {}
         for image_path in image_paths:
             #print (image_path.shape)
-            loaded_images, _ = load_images([image_path], size, image_names=['1'])
+            loaded_images, _ = load_images([image_path], size, image_names=[0])
             #print(loaded_images[0].shape)
             loaded_images = np.rollaxis(loaded_images, 3, 1)
             #print(loaded_images[0].shape)
@@ -37,7 +37,7 @@ class LiteClassifier:
             self.lite_model.setInput(loaded_images)
             pred = self.lite_model.forward()
 
-            result['1'] = {
+            result[0] = {
                  "unsafe": pred[0][0],
                 "safe": pred[0][1],
             }

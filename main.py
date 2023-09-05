@@ -1,12 +1,21 @@
 
 from ScreenCapture import ScreenCapture  
-from lite_classifier import LiteClassifier as NudeClassifierLite
+
 import matplotlib.pyplot as plt
 from PIL import Image as pil_image
 import pyautogui
 
+from lite_classifier import LiteClassifier as NudeClassifierLite
+from classifier import Classifier as NudeClassifier
+
+
+
+#classifier = NudeClassifier()
 
 classifier_lite = NudeClassifierLite()
+
+
+
 
 capture = ScreenCapture()
 
@@ -26,7 +35,7 @@ while True:
     plt.pause(1)
     '''
 
-
+    #classify = classifier.classify(screen)
     classify = classifier_lite.classify(screen)
 
 
@@ -45,11 +54,13 @@ while True:
             pyautogui.press('right')
             pyautogui.press('right')
             #exit()
-        elif   unsafe > 0.5 :
+            exit()
+        elif   unsafe > 0.6 :
             print('safe : ' , safe )
             print('unsafe : ' , unsafe)
             print('sex ')
             pyautogui.press('right')
+            exit()
 
     #you can try by url img 
     #print(classifier_lite.classify('C:/Users/deep_root/Desktop/a.jpg'))
